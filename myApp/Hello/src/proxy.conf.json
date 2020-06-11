@@ -1,0 +1,10 @@
+{
+    "/apis": {
+      "target": "http://localhost:4000",
+      "secure": false,
+      "pathRewrite": {
+        "^/apis": ""
+      },
+      "logLevel": "debug"
+    }
+  }

@@ -1,0 +1,29 @@
+<div id="accordion">
+    <div class="card" *ngFor="let file of files; let j=index">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target=`#${file.name}` aria-expanded="true" aria-controls="collapseOne">
+            {{file.name}}
+          </button>
+        </h5>
+      </div>
+  
+      <div id="{{file.name}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let filenames of file.fileName; let i=index">
+                <td>{{ filenames }}</td>
+                <td><button class="btn btn-primary button" (click)="downloadPdf(filenames,file.content[i])">Download</button></td>
+              </tr>   
+            </tbody>
+          </table></div>
+      </div>
+    </div>
+    </div>
